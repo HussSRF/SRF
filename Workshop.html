@@ -1,3 +1,874 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer Workshop Schedule 2025 - Serenity Renewal for Families</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> Removed Tailwind CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="workshop-styles.css">
+</head>
+<body class="antialiased">
+    <header class="bg-white shadow-md py-8">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold gradient-text">Summer Work
+shop Schedule 2025</h1>
+        </div>
+    </header>
+    <main class="container mx-auto px-6 py-12">
+        <section class="mb-12 text-center p-6 contact-info rounded-lg">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-3">Register for a
+ Workshop</h2>
+            <p class="text-gray-700 text-lg">
+                If you would like to register for any upcoming workshop,<br>
+                please email <a href="mailto:workshops@serenityrenewal.ca" class
+="text-blue-600 hover:text-blue-800 font-medium">workshops@serenityrenewal.ca</a
+> or call <a href="tel:613-523-5143" class="text-blue-600 hover:text-blue-800 fo
+nt-medium">613-523-5143</a>.
+            </p>
+        </section>
+        <section class="featured-workshop-container">
+            <!-- Featured workshop will be dynamically inserted here -->
+        </section>
+        <div class="mb-8">
+            <nav class="bg-sky-100 p-1.5 rounded-lg flex space-x-1.5" role="tablist" aria-label="Workshop Tabs">
+                <button id="tab-btn-upcoming" role="tab" class="tab-button flex-1 py-2.5 px-4 rounded-md font-medium text-sm" data-tab="upcoming" aria-controls="upcoming">Upcoming Workshops</button>
+                <button id="tab-btn-past" role="tab" class="tab-button flex-1 py-2.5 px-4 rounded-md font-medium text-sm" data-tab="past" aria-controls="past">Past Workshops</button>
+            </nav>
+        </div>
+
+        <div id="upcoming" role="tabpanel" class="tab-panel" aria-labelledby="tab-btn-upcoming">
+            <!-- Upcoming workshops will be dynamically inserted here -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- JS will populate this -->
+            </div>
+        </div>
+
+        <div id="past" role="tabpanel" class="tab-panel" aria-labelledby="tab-btn-past">
+            <p class="text-gray-600 text-lg mb-4">Browse through our previously held workshops.</p>
+            <!-- Past workshops will be dynamically inserted here -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- JS will populate this -->
+            </div>
+        </div>
+    </main>
+
+<script>
+        const workshopsData = [
+            // Featured & Upcoming Workshop
+            {
+                id: "intro-healing-recovery-jul12",
+                title: "Introduction to Healing and Recovery",
+                facilitator: "Liz VandenBygaart",
+                dateTime: "Saturday, July 12, 9:30 am – 3:30 pm",
+                description: "This is Serenity Renewal for Families’ most recommended workshop: all family members are welcome to attend this workshop, either together or on your own!",
+                type: "In Person", // In Person, Virtual, Hybrid
+                status: "upcoming", // upcoming, past
+                isFeatured: true,
+                tags: ["In Person"],
+                detailedDescription: "This is Serenity Renewal for Families’ Anchor Workshop: all family members are encouraged to attend this workshop, either together or on your own! At Serenity Renewal for Families, we believe that addictions and recovery are a family affair. Whether you are personally struggling with addiction, are in the early stages of recovery, have been in recovery for a while or if you are a family member affected by a family member’s addiction, our one-day workshop is designed for you. During the workshop, all participants will explore various recovery pathways and receive valuable information to help guide their next steps on the journey toward healing and recovery."
+            },
+            // Upcoming Workshops
+            {
+                id: "codependency-jul19",
+                title: "Codependency",
+                facilitator: "Catherine Pepper",
+                dateTime: "Saturday, July 19 from 9:30 am to 3:30 pm",
+                description: "Codependent behaviour is a learned coping style that includes hyper focusing on others while being unable to express one’s own needs. Learn to reclaim your identity and create authentic relationships.",
+                type: "In Person",
+                status: "upcoming",
+                isFeatured: false,
+                tags: ["In Person"]
+            },
+            {
+                id: "anger-resentment-jul26",
+                title: "Anger and Resentment",
+                facilitator: "Sofie Charron",
+                dateTime: "Saturday, July 26 from 9:30 am to 3:30 pm",
+                description: "In active addictions, in recovery, or as a family member, resentment is known as the number one offender because we find that we are unable to cope with the painful feelings and turn to escapism and numbing behaviours which fuel the cycle of anger, resentment, relapse and addictions. In our journey of healing and recovery, we must find a way to deal with this cycle in a different way. This workshop brings awareness to the cycle of anger and provides helpful coping strategies. This workshop provides the opportunity to explore the roots of our resentments so we can open ourselves up to a path of healing and letting go.",
+                type: "In Person",
+                status: "upcoming",
+                isFeatured: false,
+                tags: ["In Person"]
+            },
+            {
+                id: "shame-guilt-aug7",
+                title: "Shame and Guilt",
+                facilitator: "Sarah Eastman",
+                dateTime: "Four Thursdays in a row: (August 7, 14, 21 and 28) from 6:30 pm to 8:00 pm",
+                description: "Shame is grounded in an overwhelming feeling of brokenness. We believe ourselves to be defective or unworthy. Guilt is different. It is the feeling that comes when we are aware of having made a mistake or having done something wrong or improper. Feelings of shame and guilt may cause us to believe ourselves unworthy of the serenity that would come from following a journey of recovery and healing. Facing shame and guilt is important for those of us wanting to accept a spiritual path of trust, humility, tolerance, and gratitude.",
+                type: "Virtual",
+                status: "upcoming",
+                isFeatured: false,
+                tags: ["Virtual"]
+            },
+            {
+                id: "emotional-regulation-self-aug16",
+                title: "Emotional Regulation and Self",
+                facilitator: "Gwen Preston",
+                dateTime: "Saturday, August 16 from 9:30 am to 3:30 pm",
+                description: "Do your emotions hold you hostage? Learn how to take back control by discovering the YOU beneath it all. Let go of shame and come home to your true self. Discover your emotional needs and learn how to compassionately love yourself beyond conditions. Move forward cultivating the life you want to live, not fearing that which you want to avoid. Together let’s transform surviving into thriving.",
+                type: "In-Person",
+                status: "upcoming",
+                isFeatured: false,
+                tags: ["In-Person"]
+            },
+            {
+                id: "im-in-recovery-now-what-aug23",
+                title: "I’m in Recovery, Now What?",
+                facilitator: "Catherine Pepper",
+                dateTime: "Saturday, August 23 from 9:30 am to 3:30 pm",
+                description: "This workshop is for anyone in recovery from a substance use disorder or a processing disorder (gambling, sex, porn, overeating…). Whether you’re new to recovery or returning after a relapse/recurrence, it’s common to encounter challenges along the way. Explore the feelings and experiences that can make it difficult to stay on track in your recovery from substance use or compulsive behaviours. Acquire some helpful tools to keep your journey on track!",
+                type: "In-Person",
+                status: "upcoming",
+                isFeatured: false,
+                tags: ["In-Person"]
+            },
+            // Past Workshops
+            {
+                id: "healthy-boundaries-jun14",
+                title: "Healthy Boundaries",
+                facilitator: "Catherine Pepper",
+                dateTime: "Saturday, June 14 from 9:30 am to 3:30 pm",
+                description: "What is a boundary? How are they formed, shaped, damaged, or broken? How can we recognize healthy and unhealthy boundaries in ourselves and others? What do our relationship patterns and choices tell us about the health of our own boundaries? How does the setting of new boundaries help in the healing of our broken or empty relationship patterns?",
+                type: "Concluded", // Assuming type from tag, might need clarification
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"]
+            },
+            {
+                id: "emotional-regulation-others-may21",
+                title: "Emotional Regulation and Others",
+                facilitator: "Maimoona Batool",
+                dateTime: "Four Wednesdays in a row (May 21, 28 and June 4 and 11) from 6:30 pm to 8:00 pm",
+                description: "Has mistrust held you back in relationships? Sometimes our emotions can prevent us from fully connecting with others. Learn how to transform emotional reactions into intuitive responding, better navigate conflict and restore bonds. Explore how to communicate your feelings, set boundaries and create connections that go beyond words. Together, let’s see how embracing our emotions can guide us to a greater sense of belonging..",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"]
+            },
+            {
+                id: "couples-communication-jun7",
+                title: "Couples Communication",
+                facilitator: "Liz VandenBygaart", // Note: HTML says "Facilitators:" but only lists one.
+                dateTime: "Saturday, June 7 from 12:00 pm to 5:30 pm",
+                description: "Listening and communicating clearly are required for healthy relationships. Communication skills can be learned, practiced and improved. This one-day workshop will provide couples with tools that they can apply to change patterns of communication that are not beneficial to their relationship.",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"]
+            },
+            {
+                id: "unlocking-inner-strength-may10",
+                title: "Unlocking Inner Strength: Cultivating Self-Compassion",
+                facilitator: "Dorothy Ogbumah",
+                dateTime: "Saturday, May 10 from 9:30 am to 3:30 pm",
+                description: "Discover how DBT skills can elevate your self-esteem while harnessing the power of self-compassion to build resilience and emotional well-being. Learn to challenge long-held beliefs which interfere with your journey of healing and recovery. Self-compassion isn’t about self-judgment—it’s about empowering yourself with the tools to heal, grow, and create a brighter future. (In-Person)",
+                type: "Concluded", // Description implies In-Person for original event
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In-Person"
+            },
+            {
+                id: "acceptance-is-the-answer-apr24",
+                title: "Acceptance is the Answer",
+                facilitator: "Catherine Pepper",
+                dateTime: "Four Thursdays in a row (April 24, May 1, 8 and 15) from 6:30 pm to 8:00 pm",
+                description: "The essential element of the healing process. Learn how to develop a healthy perspective of our reality and life circumstances to maintain success on your journey of healing and recovery. (Virtual)",
+                type: "Concluded", // Description implies Virtual for original event
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was Virtual"
+            },
+            {
+                id: "im-in-recovery-now-what-may3",
+                title: "I’m in Recovery, Now What?",
+                facilitator: "Sarah Eastman",
+                dateTime: "Saturday, May 3 from 9:30 am to 3:30 pm",
+                description: "This workshop is for anyone in recovery from a substance use disorder or a processing disorder (gambling, sex, porn, overeating…). Whether you’re new to recovery or returning after a relapse/recurrence, it’s common to encounter challenges along the way. Explore the feelings and experiences that can make it difficult to stay on track in your recovery from substance use or compulsive behaviours. Acquire some helpful tools to keep your journey on track! (In-Person)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In-Person"
+            },
+            {
+                id: "what-about-me-i-matter-too-apr26",
+                title: "What About Me? I Matter Too!",
+                facilitator: "Leanne McEwen and Michelle Tasker",
+                dateTime: "Saturday, April 26 from 9:30 am to 3:30 pm",
+                description: "This workshop is for CSOs (Concerned Significant Others). This one-day workshop has been developed for family members (or other concerned significant others) who have a loved one (or co-parent) who is in active addictions or is in early recovery. This workshop will discuss the importance of “putting on our oxygen masks first”. Participants will learn about family resources and tools of self-care which can lead to a healthier life. (In-Person)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In-Person"
+            },
+            {
+                id: "intro-healing-recovery-apr12",
+                title: "Introduction to Healing and Recovery",
+                facilitator: "Liz VandenBygaart",
+                dateTime: "Saturday, April 12 from 9:30 am to 3:30", // Note: time format slightly different
+                description: "This is Serenity Renewal for Families’ Anchor Workshop: all family members are encouraged to attend this workshop! At Serenity Renewal for Families, we believe that addictions and recovery are a family affair. Whether you are personally struggling with addiction, are in the early stages of recovery, or are a family member affected by a family member’s addiction, our one-day workshop is designed for you. During the workshop, all participants will explore various recovery pathways and receive valuable information to help guide their next steps on the journey toward healing and recovery. (In-Person)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In-Person"
+            },
+            {
+                id: "codependency-mar29",
+                title: "Codependency",
+                facilitator: "Catherine Pepper",
+                dateTime: "Saturday, March 29 from 9:30 am to 3:30 pm",
+                description: "Codependent behaviour is a learned coping style that includes hyper focusing on others while being unable to express one’s own needs. Learn to reclaim your identity and create authentic relationships. (In-Person)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In-Person"
+            },
+            {
+                id: "anger-resentment-mar22",
+                title: "Anger and Resentment",
+                facilitator: "Sofie Charron",
+                dateTime: "Saturday, March 22 from 9:30 am to 3:30 pm",
+                description: "In active addictions, in recovery, or as a family member, resentment is known as the number one offender because we find that we are unable to cope with the painful feelings and turn to escapism and numbing behaviours which fuel the cycle of anger, resentment, relapse and addictions. In our journey of healing and recovery, we must find a way to deal with this cycle in a different way. This workshop brings awareness to the cycle of anger and provides helpful coping strategies. This workshop provides the opportunity to explore the roots of our resentments so we can open ourselves up to a path of healing and letting go. (In-Person)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In-Person"
+            },
+            {
+                id: "emotional-regulation-self-feb19",
+                title: "Emotional Regulation and Self",
+                facilitator: "Maimoona Batool",
+                dateTime: "Four Wednesdays in a row from 6:30 pm to 8:00 pm on Feb. 19, 26 and March 5 and 12",
+                description: "Do your emotions hold you hostage? Learn how to take back control by discovering the YOU beneath it all. Let go of shame and come home to your true self. Discover your emotional needs and learn how to compassionately love yourself beyond conditions. Move forward cultivating the life you want to live, not fearing that which you want to avoid. Together let’s transform surviving into thriving. (Virtual)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was Virtual"
+            },
+            {
+                id: "im-not-comfortable-mar8",
+                title: "I’m Not Comfortable in My Own Body (formerly Body Image)",
+                facilitator: "Michelle Tasker and Dorothy Ogbumah",
+                dateTime: "Saturday, March 8th from 9:30 am to 3:30 pm",
+                description: "Body image issues are a profoundly important element in our stories of healing and recovery from addictions, codependency, and family of origin impacts. Deeply held beliefs about how I look and how I feel about myself can affect my relationship with self and with others. Exploring where the negative beliefs came from, and then learning how to look with compassion at our bodies can help us move towards peace and joy. (In-Person)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In-Person"
+            },
+            {
+                id: "im-in-recovery-now-what-feb15",
+                title: "I’m in Recovery, Now What?",
+                facilitator: "Sarah Eastman",
+                dateTime: "Saturday, February 15 from 9:30 am to 3:30",
+                description: "Whether you’re new to recovery or returning after a relapse, it’s common to encounter challenges along the way. Explore the feelings and experiences that can make it difficult to stay on track in your recovery from substance use or compulsive behaviours. Acquire some helpful tools to keep your journey on track! (In-Person)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In-Person"
+            },
+            {
+                id: "intro-healing-recovery-feb1",
+                title: "Introduction to Healing and Recovery",
+                facilitator: "Liz VandenBygaart",
+                dateTime: "Saturday, February 1 from 9:30 am to 3:30",
+                description: "At Serenity Renewal for Families, we believe that addictions and recovery are a family affair. Whether you are personally struggling with addiction, are in the early stages of recovery, or are a family member affected by a family member’s addiction, our one-day workshop is designed for you. During the workshop, all participants will explore various recovery pathways and receive valuable information to help guide their next steps on the journey toward healing and recovery. (In-Person)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In-Person"
+            },
+            {
+                id: "family-of-origin-jan25",
+                title: "Family of Origin",
+                facilitator: "Catherine Pepper",
+                dateTime: "Saturday, January 25, 9:30 am to 3:30 pm",
+                description: "Family of Origin experiences have a profound influence on our thinking and beliefs. These shape the choices and feelings we experience in our relationships and in parenting our children. Because it is literally the basis from which you develop, your family of origin has a large impact on you and your life. But what happens when that impact is negative? In this workshop, we will explore how our family of origins has helped shape us and how we can heal to move forward in our journey. (In-Person)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In-Person"
+            },
+            {
+                id: "grief-loss-jan22",
+                title: "Grief and Loss: Living with the Sorrow of Addiction",
+                facilitator: "Wally Clare",
+                dateTime: "Four Wednesdays in a row from 6:30 pm to 8:00 pm on January 22, 29 and February 5 and 12",
+                description: "Living with or losing a loved one to addictions will often make our grief more complicated. Last year alone, Canada reported 67,000 substance use-related deaths. Even if our loved ones are still alive, the grief of losing them to their addiction is complex. Societal stigma often prevents us from sharing our grief with others, especially when we may be met with judgement and misunderstanding. Can we do anything about the inner voices of self-judgement and criticism? Join this workshop to share your grief journey in a safe and compassionate space. (Virtual)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was Virtual"
+            },
+            {
+                id: "shame-guilt-jan18",
+                title: "Shame and Guilt",
+                facilitator: "Natalie Bell",
+                dateTime: "Saturday, January 18, 9:30 am to 3:30 pm",
+                description: "Shame is grounded in an overwhelming feeling of brokenness. We believe ourselves to be defective or unworthy. Guilt is different. It is the feeling that comes when we are aware of having made a mistake or having done something wrong or improper. Feelings of shame and guilt may cause us to believe ourselves unworthy of the serenity that would come from following a journey of recovery and healing. Facing shame and guilt is important for those of us wanting to accept a spiritual path of trust, humility, tolerance, and gratitude. (In-Person)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In-Person"
+            },
+            {
+                id: "healthy-boundaries-dec14",
+                title: "Healthy Boundaries",
+                facilitator: "Catherine Pepper",
+                dateTime: "Saturday, December 14, 9:30 am to 3:30 pm",
+                description: "What is a boundary? How are they formed, shaped, damaged, or broken? How can we recognize healthy and unhealthy boundaries in ourselves and others? What do our relationship patterns and choices tell us about the health of our own boundaries? How does the setting of new boundaries help in the healing of our broken or empty relationship patterns? (Virtual Only)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was Virtual Only"
+            },
+            {
+                id: "couples-communication-dec7",
+                title: "Couples Communication",
+                facilitator: "Wally Clare and Liz VandenBygaart",
+                dateTime: "Saturday, December 7, 12:00 pm to 5:30 pm",
+                description: "Listening and communicating clearly are required for healthy relationships. Communication skills can be learned, practiced and improved. This one-day workshop will provide couples with tools that they can apply to change patterns of communication that are not beneficial to their relationship. (In-Person Only)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In-Person Only"
+            },
+            {
+                id: "intro-healing-recovery-nov30",
+                title: "Introduction to Healing and Recovery",
+                facilitator: "Jeff Latimer",
+                dateTime: "Saturday, November 30 from 9:30 am to 3:30 pm",
+                description: "At Serenity Renewal for Families, we believe that addictions and recovery are a family affair. Whether you are personally struggling with addiction, are in the early stages of recovery, or are a family member affected by a family member’s addiction, our one-day workshop is designed for you. During the workshop, all participants will explore various recovery pathways and receive valuable information to help guide their next steps on the journey toward healing and recovery. (In-Person Only)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In-Person Only"
+            },
+            {
+                id: "what-about-me-nov7",
+                title: "What About Me? I Matter Too!",
+                facilitator: "Michelle Tasker and Crystal Lord",
+                dateTime: "Thursday mornings (three weeks in a row): November 7, 14 and 21, 10:00 am to 12:00 pm",
+                description: "This three-week workshop has been developed for family members who have an adult family member (or co-parent) who is in active addictions. This workshop will discuss the importance of “putting on our oxygen masks first”. By the end of the three weeks, participants will learn about family resources and tools of self-care which can lead to a healthier life. (In-Person Only)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In-Person Only"
+            },
+            {
+                id: "acceptance-is-the-answer-nov2",
+                title: "Acceptance is the Answer",
+                facilitator: "Catherine Pepper",
+                dateTime: "Saturday, November 2, 2024, 9:30 a.m. to 3:30 p.m.",
+                description: "The essential element of the healing process. Learn how to develop a healthy perspective of our reality and life circumstances to maintain success on your journey of healing and recovery. (In-Person Only)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In-Person Only"
+            },
+            {
+                id: "anger-resentment-oct26",
+                title: "Anger and Resentment",
+                facilitator: "Catherine Pepper",
+                dateTime: "Saturday, October 26, 9:30 am to 3:30 pm",
+                description: "In active addictions, in recovery, or as a family member, resentment is known as the number one offender because we find that we are unable to cope with the painful feelings and turn to escapism and numbing behaviors which fuel the cycle of anger, resentment, relapse and addictions. In our journey of healing and recovery, we must find a way to deal with this cycle differently. This workshop brings awareness to the cycle of anger and provides helpful coping strategies. This workshop provides the opportunity to explore the roots of our resentments so we can open ourselves up to a path of healing and letting go. (In-Person Only)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In-Person Only"
+            },
+            {
+                id: "emotional-regulation-self-oct23",
+                title: "Emotional Regulation and Self",
+                facilitator: "Maimoona Batool",
+                dateTime: "Wednesdays (four weeks in a row) October 23, 30 and November 6 and 13, 6:30 pm to 8:00 pm",
+                description: "Do your emotions hold you hostage? Learn how to take back control by discovering the YOU beneath it all. Let go of shame and come home to your true self. Discover your emotional needs and learn how to compassionately love yourself beyond conditions. Move forward cultivating the life you want to live, not fearing that which you want to avoid. Together let’s transform surviving into thriving. (Virtual Only)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was Virtual Only"
+            },
+            {
+                id: "family-of-origin-sep28",
+                title: "Family of Origin",
+                facilitator: "Catherine Pepper",
+                dateTime: "Saturday, September 28, 9:30 am to 3:30 pm",
+                description: "Family of Origin experiences have a profound influence on our thinking and beliefs. These shape the choices and feelings we experience in our relationships and in parenting our children. Because it is literally the basis from which you develop, your family of origin has a large impact on you and your life. But what happens when that impact is negative? In this workshop, we will explore how our family of origins has helped shape us and how we can heal to move forward in our journey. (Hybrid: In-Person or Virtual)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was Hybrid: In-Person or Virtual"
+            },
+            {
+                id: "couples-communication-sep21",
+                title: "Couples Communication",
+                facilitator: "Wally Clare and Liz VandenBygaart",
+                dateTime: "Saturday, September 21st, 9:30 am to 3:30 pm",
+                description: "Listening and communicating clearly are required for healthy relationships. Communication skills can be learned, practiced, and improved. This one-day workshop will provide couples with tools that they can apply to change patterns of communication that are not beneficial to their relationship. This workshop is full. If you would like to join the waitlist, or to be notified when the workshop is offered again, please email workshops@serenityrenewal.ca. (In-Person only)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In-Person only"
+            },
+            {
+                id: "intro-healing-recovery-sep7",
+                title: "Introduction to Healing and Recovery",
+                facilitator: "Jeff Latimer",
+                dateTime: "Saturday, September 7, 9:30 am to 3:30 pm",
+                description: "At Serenity Renewal for Families, we believe that addictions and recovery are a family affair. Whether you are personally struggling with addiction, are in the early stages of recovery, or are a family member affected by a family member’s addiction, our one-day workshop is designed for you. During the workshop, all participants will explore various recovery pathways and receive valuable information to help guide their next steps on the journey toward healing and recovery. (In-Person only)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In-Person only"
+            },
+            {
+                id: "codependency-aug17",
+                title: "Codependency",
+                facilitator: "Catherine Pepper",
+                dateTime: "Saturday, August 17, 2024, 9:30 a.m. to 3:30 p.m.",
+                description: "Codependent behaviour is a learned coping style that includes hyper-focusing on others while being unable to express one’s own needs. Learn to reclaim your identity and create authentic relationships. (Hybrid: In-person or Virtual)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was Hybrid: In-person or Virtual"
+            },
+            {
+                id: "shame-guilt-jul27",
+                title: "Shame and Guilt",
+                facilitator: "Natalie Bell",
+                dateTime: "Saturday, July 27, 2024, 9:30 am to 3:30 pm",
+                description: "Shame is grounded in an overwhelming feeling of brokenness. We believe ourselves to be defective or unworthy. Guilt is different. It is the feeling that comes when we are aware of having made a mistake or having done something wrong or improper. Feelings of shame and guilt may cause us to believe ourselves unworthy of the serenity that would come from following a journey of recovery and healing. Facing shame and guilt is important for those of us wanting to accept a spiritual path of trust, humility, tolerance, and gratitude. (Hybrid: In-person or Virtual)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was Hybrid: In-person or Virtual"
+            },
+            {
+                id: "healthy-boundaries-jul6",
+                title: "Healthy Boundaries: Letting Go of Fear, Anxiety, Resentment and the Despair of Addictions and Codependency",
+                facilitator: "Catherine Pepper",
+                dateTime: "Saturday, July 6, 2024, 9:30 a.m. to 3:30 p.m.",
+                description: "What is a boundary? How are they formed, shaped, damaged, or broken? How can we recognize healthy and unhealthy boundaries in ourselves and others? What do our relationship patterns and choices tell us about the health of our own boundaries? How does the setting of new boundaries help in the healing of our broken or empty relationship patterns? (Hybrid: In-person or Virtual)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was Hybrid: In-person or Virtual"
+            },
+            {
+                id: "intro-healing-recovery-jun8",
+                title: "Introduction to Healing and Recovery",
+                facilitator: "Jeff Latimer",
+                dateTime: "Saturday, June 8, 2024, 9:30 am to 3:30 pm",
+                description: "This one-day workshop will explore identifying addictive and codependent behaviours in ourselves and in our loved ones, what are the twelve steps and why are they important? This workshop will encourage participants to email questions to the facilitator. Finally, the workshop will provide direction for next steps in your journey of healing and recovery. (In Person ONLY)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In Person ONLY"
+            },
+            {
+                id: "anger-resentment-may25",
+                title: "Anger and Resentment",
+                facilitator: "Catherine Pepper",
+                dateTime: "Saturday, May 25, 2024, 9:30 am to 3:30 pm",
+                description: "Anger and Resentment are simply defined as “bitter indignation at having been treated unfairly”. Our addiction and codependency literature identifies resentment as the single most dangerous character defect in our journey of healing and recovery. This workshop will provide the opportunity to explore the roots of our resentments, how they get triggered in everyday life and how we are able to let go of the old wounds at the root of our suffering. (In Person ONLY)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In Person ONLY"
+            },
+            {
+                id: "grief-loss-codependency-may1",
+                title: "Grief and Loss: Living with the Sorrow of Addiction and Codependency",
+                facilitator: "Wally Clare and Maimoona Batool",
+                dateTime: "Wednesdays, May 1 – 22, 2024, 6:30 pm to 8:00 pm",
+                description: "There are never simple answers for our individual experiences of grief, loss and sorrow. Addictive and codependent behaviours in ourselves and in our loved ones will often make our grief more complicated and harder to understand. What do we mean when we talk about a healing journey for our sorrow? Is there a way to distinguish between grief, sorrow, and depression? What are the symptoms of grief? Can I do anything about the inner voices of self-judgment and criticism? Why is it comforting to share with others who have experienced similar grief and loss? (Virtual only)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was Virtual only"
+            },
+            {
+                id: "acceptance-is-the-answer-mar23",
+                title: "Acceptance is the Answer",
+                facilitator: "Catherine Pepper",
+                dateTime: "Saturday, March 23, 2024, 9:30 a.m. to 3:30 p.m.",
+                description: "The essential element of the healing process. Learn how to develop a healthy perspective of our reality and life circumstances to maintain success on your journey of healing and recovery. (Hybrid: In-person or Virtual)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was Hybrid: In-person or Virtual"
+            },
+            {
+                id: "womens-intimacy-feb26",
+                title: "WOMEN’S Only Workshop: Intimacy and Healthy Relationships",
+                facilitator: "Leanne McEwen",
+                dateTime: "Mondays, February 26, 2024, March 4, 2024, and March 11, 2024 (three Mondays in a row), 6:30 p.m. to 8:30 p.m.",
+                description: "What we experienced growing up profoundly shapes our thinking, beliefs, behaviours, and choices for today, including our capacity for intimacy in our relationships with others. Our sexuality is a core dimension of who we are. The failure to fulfill this desire leaves us feeling incomplete, inadequate, and alone. Making healthy relationships and sexual choices is essential for personal growth. **priority registration will be given to those who have not taken this workshop before. (Virtual)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was Virtual"
+            },
+            {
+                id: "mens-intimacy-mar2",
+                title: "MEN’S Only Workshop: Intimacy and Healthy Relationships",
+                facilitator: "Jeff Latimer",
+                dateTime: "Saturday, March 2nd, 9:30 am to 3:30 pm",
+                description: "What we experienced growing up profoundly shapes our thinking, beliefs, behaviours, and choices for today, including our capacity for intimacy in our relationships with others. Our sexuality is a core dimension of who we are. The failure to fulfill this desire leaves us feeling incomplete, inadequate, and alone. Making healthy relationships and sexual choices is essential for personal growth. (In Person ONLY)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In Person ONLY"
+            },
+            {
+                id: "self-esteem-compassion-feb10",
+                title: "Self Esteem and Self Compassion",
+                facilitator: "Catherine Pepper",
+                dateTime: "Saturday, February 10, 2024, 9:30 a.m. to 3:30 p.m.",
+                description: "Explore how to accept our own humanness and imperfections with kindness by developing self-compassion. Learn how to shift into a positive mindset with confidence by strengthening self-esteem. (Virtual)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was Virtual"
+            },
+            {
+                id: "codependency-feb24",
+                title: "Codependency",
+                facilitator: "Catherine Pepper",
+                dateTime: "Saturday, February 24, 2024, 9:30 a.m. to 3:30 p.m.",
+                description: "Codependent behaviour is a learned coping style that includes hyper focusing on others while being unable to express one’s own needs. Learn to reclaim your identity and create authentic relationships. (Hybrid: In-person or Virtual)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was Hybrid: In-person or Virtual"
+            },
+            {
+                id: "intro-healing-recovery-jan27",
+                title: "Introduction to Healing and Recovery",
+                facilitator: "Jeff Latimer",
+                dateTime: "Saturday, January 27, 2024, 9:30 a.m. to 3:30 p.m.",
+                description: "This one-day workshop will explore identifying addictive and codependent behaviours in ourselves and in our loved ones, what are the twelve steps and why are they important? This workshop will encourage participants to email questions to the facilitator. Finally, the workshop will provide direction for next steps in your journey of healing and recovery. (Virtual)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was Virtual"
+            },
+            {
+                id: "healthy-boundaries-codependency-jan20",
+                title: "Healthy Boundaries: Letting Go of Fear, Anxiety, Resentment and the Despair of Addictions and Codependency",
+                facilitator: "Catherine Pepper",
+                dateTime: "Saturday, January 20, 2024, 9:30 a.m. to 3:30 p.m.",
+                description: "What is a boundary? How are they formed, shaped, damaged, or broken? How can we recognize healthy and unhealthy boundaries in ourselves and others? What do our relationship patterns and choices tell us about the health of our own boundaries? How does the setting of new boundaries help in the healing of our broken or empty relationship patterns? (Hybrid: In-person or Virtual)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was Hybrid: In-person or Virtual"
+            },
+            {
+                id: "codependency-nov18-2023", // Added year to distinguish from other "codependency"
+                title: "Codependency",
+                facilitator: "Catherine Pepper",
+                dateTime: "Saturday, November 18, 2023 from 9:30 am to 3:30 pm",
+                description: "Codependent behaviour is a learned coping style that includes hyper focusing on others while being unable to express one’s own needs. Learn to reclaim your identity and create authentic relationships. (Hybrid: In-person or Virtual)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was Hybrid: In-person or Virtual"
+            },
+            {
+                id: "intro-healing-recovery-nov20-2023", // Added year
+                title: "Introduction to Healing and Recovery",
+                facilitator: "Jeff Latimer",
+                dateTime: "Monday, November 20, 2023 through Thursday, November 23, 2023 from 6:30 to 8:00 pm each day",
+                description: "This four-day workshop will explore identifying addictive and codependent behaviours in ourselves and in our loved ones, what are the twelve steps and why are they important? This workshop will encourage participants to email questions to the facilitator. Finally, the workshop will provide direction for next steps in your journey of healing and recovery. (Virtual ONLY)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was Virtual ONLY"
+            },
+            {
+                id: "men-in-recovery-apr8",
+                title: "Men in Recovery: A Six-Week Program",
+                facilitator: "Jeff Latimer",
+                dateTime: "Monday, April 8, 15, 22, 29 and May 6 and 13th, 6:30 to 8:00 pm",
+                description: "In our journey of healing and recovery, men can face numerous challenges and barriers that may interfere with full healing. Societal pressures can lead us to believe that being a man means we do not need help and that being vulnerable is a sign of weakness or defeat. This six-week program will explore issues unique to men in recovery with a focus on solutions. Within a supportive group environment, we will share and learn from each other’s experiences related to a number of issues including intimacy, anger management, healthy sexuality, stigma and mental health, spirituality, and recovery. Fee: $300 (sliding fee scale and 100% subsidies are available) (In-Person Only)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In-Person Only"
+            },
+            {
+                id: "i-matter-too-apr27",
+                title: "I Matter Too! What About Me?: A Four-Week Program",
+                facilitator: "Michelle Tasker and Crystal Lord",
+                dateTime: "Saturday, April 27, and May 4, 11 and 18, 9:30 am to 11:00 am",
+                description: "This four-week program has been developed for family members who have an adult family member (or co-parent) who is in active addictions. This program will discuss the importance of “putting on our oxygen masks first”. By the end of the four weeks, participants will learn about family resources and tools of self-care which can lead to a healthier life. Fee: $140 (sliding fee scale and 100% subsidies are available) (In-Person Only)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In-Person Only"
+            },
+            {
+                id: "self-care-family-feb5",
+                title: "Self Care for Family Members",
+                facilitator: "Leanne McEwen and Wayne Burke",
+                dateTime: "Feb 5, 2024, February 12, 2024, February 26, 2024, and March 4, 2024, 10:30 a.m. to 12:00 p.m.",
+                description: "This four-week program will enable family members who have an adult family member who is in active addictions. The program offers an in-depth view of how addictions/substance use disorder impacts every member of the family. The program will provide an opportunity to look at ourselves with the idea of making personal changes which can lead to a healthier life. It gives us hope for change. $140 fee (sliding fee scale available) (In-Person Only)",
+                type: "Concluded",
+                status: "past",
+                isFeatured: false,
+                tags: ["Concluded"],
+                note: "Original was In-Person Only"
+            }
+        ];
+
+        function createWorkshopCard(workshop) {
+            let tagsHTML = '';
+            if (workshop.isFeatured) {
+                tagsHTML += `<div class="corner-tag">★ Most Recommended</div>`;
+            }
+
+            // Determine the main tag based on status and type
+            let mainTagText = '';
+            let mainTagClass = '';
+
+            if (workshop.status === 'past') {
+                mainTagText = 'Concluded';
+                mainTagClass = 'bg-gray-200 text-gray-700';
+            } else if (workshop.type.toLowerCase().includes('in person') || workshop.type.toLowerCase().includes('in-person')) {
+                mainTagText = 'In Person';
+                mainTagClass = 'tag-person'; // Assumes .tag-person is defined with appropriate styles
+            } else if (workshop.type.toLowerCase().includes('virtual')) {
+                mainTagText = 'Virtual';
+                mainTagClass = 'tag-virtual'; // Assumes .tag-virtual is defined with appropriate styles
+            } else if (workshop.type.toLowerCase().includes('hybrid')) {
+                mainTagText = 'Hybrid';
+                mainTagClass = 'bg-purple-100 text-purple-700'; // Example for Hybrid
+            }
+
+
+            if (mainTagText) {
+                tagsHTML += `<span class="tag ${mainTagClass}">${mainTagText}</span>`;
+            }
+
+            // Additional tags from workshop.tags, if any, excluding the one already handled by mainTagText
+            if (workshop.tags && workshop.tags.length > 0) {
+                workshop.tags.forEach(tagText => {
+                    if (tagText.toLowerCase() !== mainTagText.toLowerCase()) {
+                        let tagClass = '';
+                        if (tagText.toLowerCase().includes('in person') || tagText.toLowerCase().includes('in-person')) {
+                            tagClass = 'tag-person';
+                        } else if (tagText.toLowerCase().includes('virtual')) {
+                            tagClass = 'tag-virtual';
+                        } else {
+                            tagClass = 'bg-gray-100 text-gray-600'; // Default for other tags
+                        }
+                        // Avoid duplicating the main tag if it's also in the workshop.tags array for some reason
+                        if (!tagsHTML.includes(`>${tagText}<`)) {
+                           // tagsHTML += `<span class="tag ${tagClass} ml-2">${tagText}</span>`;
+                        }
+                    }
+                });
+            }
+
+            // Use detailedDescription if available and it's the featured card, otherwise use description
+            const descriptionToShow = workshop.isFeatured && workshop.detailedDescription ? workshop.detailedDescription : workshop.description;
+
+            return `
+                <article class="workshop-card p-6 flex flex-col ${workshop.status === 'past' ? 'opacity-75' : ''} ${workshop.isFeatured ? 'featured-workshop-card' : ''}">
+                    ${workshop.isFeatured && !workshop.status.includes('past') ? '<div class="corner-tag">★ Most Recommended</div>' : ''}
+
+                    <header class="workshop-card-header mb-3 ${workshop.isFeatured ? 'workshop-title-area' : ''}">
+                        <div class="flex justify-between items-start">
+                            <h3 class="workshop-card-title text-xl font-semibold ${workshop.status === 'past' ? 'text-gray-700' : 'text-gray-800'}">${workshop.title}</h3>
+                            ${ workshop.status !== 'past' ? (workshop.type.toLowerCase().includes('virtual') ? `<span class="tag tag-virtual">${workshop.type}</span>` : `<span class="tag tag-person">${workshop.type}</span>`) : `<span class="tag bg-gray-200 text-gray-700">Concluded</span>`}
+                        </div>
+                    </header>
+
+                    <div class="workshop-card-body flex-grow">
+                        <p class="text-sm text-gray-500 mb-1"><strong class="font-medium ${workshop.status === 'past' ? 'text-gray-600' : 'text-gray-700'}">Facilitator:</strong> ${workshop.facilitator}</p>
+                        <p class="text-sm text-gray-500 mb-4"><strong class="font-medium ${workshop.status === 'past' ? 'text-gray-600' : 'text-gray-700'}">${workshop.status === 'past' ? 'Held On:' : 'Date & Time:'}</strong> ${workshop.dateTime}</p>
+                        <div class="workshop-description-area">
+                            <p class="workshop-card-description ${workshop.status === 'past' ? 'text-gray-600' : 'text-gray-700'} text-sm leading-relaxed">
+                                ${descriptionToShow}
+                            </p>
+                        </div>
+                    </div>
+
+                    ${workshop.note ? `<footer class="workshop-card-footer mt-auto pt-2"><p class="text-xs text-gray-400"><em>Note: ${workshop.note}</em></p></footer>` : ''}
+                </article>
+            `;
+        }
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab-button');
+            const featuredContainer = document.querySelector('.featured-workshop-container');
+            const upcomingPanelGrid = document.querySelector('#upcoming .grid');
+            const pastPanelGrid = document.querySelector('#past .grid');
+
+            function renderWorkshops(activeTab = 'upcoming') {
+                // Clear previous content
+                if(featuredContainer) featuredContainer.innerHTML = '';
+                if(upcomingPanelGrid) upcomingPanelGrid.innerHTML = '';
+                if(pastPanelGrid) pastPanelGrid.innerHTML = '';
+
+                // Render Featured Workshop
+                const featuredWorkshop = workshopsData.find(ws => ws.isFeatured && ws.status === 'upcoming');
+                if (featuredWorkshop && featuredContainer) {
+                    featuredContainer.innerHTML = createWorkshopCard(featuredWorkshop);
+                }
+
+                // Render Tab Content
+                let workshopsToRender = [];
+                let targetPanelGrid = null;
+
+                if (activeTab === 'upcoming') {
+                    workshopsToRender = workshopsData.filter(ws => ws.status === 'upcoming' && !ws.isFeatured);
+                    targetPanelGrid = upcomingPanelGrid;
+                } else if (activeTab === 'past') {
+                    workshopsToRender = workshopsData.filter(ws => ws.status === 'past');
+                    targetPanelGrid = pastPanelGrid;
+                }
+
+                if (targetPanelGrid) {
+                    if (workshopsToRender.length > 0) {
+                        workshopsToRender.forEach(workshop => {
+                            targetPanelGrid.innerHTML += createWorkshopCard(workshop);
+                        });
+                    } else {
+                        targetPanelGrid.innerHTML = '<p class="col-span-full text-center text-gray-500">No workshops to display in this category currently.</p>';
+                    }
+                }
+            }
+
+            let currentTabIndex = 0; // Keep track of the currently focused tab index for keyboard navigation
+
+            tabs.forEach((btn, index) => {
+                btn.addEventListener('click', (e) => {
+                    const targetTabName = e.currentTarget.dataset.tab;
+                    activateTab(e.currentTarget, targetTabName);
+                    currentTabIndex = index;
+                });
+
+                btn.addEventListener('keydown', (e) => {
+                    let newIndex = currentTabIndex;
+                    if (e.key === 'ArrowRight') {
+                        newIndex = (currentTabIndex + 1) % tabs.length;
+                        e.preventDefault(); // Prevent page scroll
+                    } else if (e.key === 'ArrowLeft') {
+                        newIndex = (currentTabIndex - 1 + tabs.length) % tabs.length;
+                        e.preventDefault(); // Prevent page scroll
+                    } else if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault(); // Prevent page scroll / space bar triggering click twice
+                        activateTab(tabs[newIndex], tabs[newIndex].dataset.tab);
+                    }
+
+                    if (newIndex !== currentTabIndex) {
+                        tabs[newIndex].focus();
+                        // Optionally, could auto-activate on arrow key, but typically users expect to press Enter/Space
+                        // activateTab(tabs[newIndex], tabs[newIndex].dataset.tab);
+                        currentTabIndex = newIndex;
+                    }
+                });
+            });
+
+            function activateTab(tabButton, tabName) {
+                // Update tab button active states
+                tabs.forEach(b => {
+                    const isCurrentButton = b === tabButton;
+                    b.classList.toggle('bg-sky-600', isCurrentButton);
+                    b.classList.toggle('text-white', isCurrentButton);
+                    b.classList.toggle('bg-white', !isCurrentButton);
+                    b.classList.toggle('text-sky-700', !isCurrentButton);
+                    b.setAttribute('aria-selected', isCurrentButton ? 'true' : 'false');
+                    b.setAttribute('tabindex', isCurrentButton ? '0' : '-1');
+                });
+
+                // Update tab panel active states and ARIA attributes
+                document.querySelectorAll('.tab-panel').forEach(panel => {
+                    const isActive = panel.id === tabName;
+                    panel.classList.toggle('active', isActive);
+                    panel.setAttribute('tabindex', isActive ? '0' : '-1');
+                    // Explicitly set aria-hidden as it's a common pattern for inactive tabpanels
+                    panel.setAttribute('aria-hidden', !isActive ? 'true' : 'false');
+                });
+
+                renderWorkshops(tabName);
+            }
+
+            // Initial render on page load
+            // Activate the first tab ("Upcoming") and render its content
+            if (tabs.length > 0) {
+                // Set initial states for all tabs before activating the first one
+                tabs.forEach((tab, index) => {
+                    tab.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
+                    tab.setAttribute('tabindex', index === 0 ? '0' : '-1');
+                    const panelId = tab.getAttribute('aria-controls');
+                    if (panelId) {
+                        const panel = document.getElementById(panelId);
+                        if (panel) {
+                            panel.setAttribute('aria-hidden', index === 0 ? 'false' : 'true');
+                            panel.setAttribute('tabindex', index === 0 ? '0' : '-1');
+                            if(index === 0) panel.classList.add('active'); else panel.classList.remove('active');
+                        }
+                    }
+                });
+                activateTab(tabs[0], tabs[0].dataset.tab); // This will also call renderWorkshops
+                currentTabIndex = 0; // Set initial currentTabIndex
+            } else {
+                // Fallback if no tabs are present
+                renderWorkshops(); // Render featured if any, and default content
+            }
+        });
+
+    </script>
+</body>
+</html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -730,3 +1601,4 @@ div[data-module-type="code"] .tab-button.bg-white.text-sky-700,
     </script>
 </body>
 </html>
+

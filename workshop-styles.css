@@ -1,0 +1,38 @@
+body { font-family: 'Inter', sans-serif; background-color: #f0f9ff; }
+.contact-info { background-color: #e0f2fe; border-top: 2px solid #3b82f6; }
+.featured-workshop-container { margin-bottom: 2rem; }
+.workshop-card { background: #fff; border-radius: .75rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform .2s, box-shadow .2s; position: relative; }
+.workshop-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+.featured-workshop-card { background-color: #f0fdfa; border: 2px solid #0d9488; box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+.corner-tag { position: absolute; top: -1px; left: -1px; background-color: #facc15; color: #374151; padding: .35rem .75rem; font-size: .75rem; font-weight: 600; text-transform: uppercase; border-top-left-radius: .75rem; border-bottom-right-radius: .75rem; display: flex; align-items: center; z-index: 10; }
+.workshop-title-area { padding-top: 2rem; }
+.tag { display: inline-block; padding: .35rem 1rem; border-radius: 9999px; font-size: .75rem; font-weight: 600; min-width: 80px; text-align: center; white-space: nowrap; }
+.workshop-card p { margin-bottom: 0.5rem; }
+.workshop-card p:last-child {margin-bottom: 0;}
+
+.tag-person { background-color: #dbeafe; color: #1e40af; margin-bottom: 10px;} /* Consider if margin-bottom is needed here or on the span itself if it's the only element */
+.tag-virtual { background-color: #d1fae5; color: #065f46; }
+.gradient-text { background: linear-gradient(to right, #3b82f6, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.coming-soon-card { background: linear-gradient(135deg, #60a5fa 0%, #34d399 100%); color: white; }
+nav { background-color: #e0f2fe; } /* This might be too general if you have other navs; consider a more specific selector if so */
+.tab-button { transition: background-color .3s, color .3s; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* Forcing Active Tab Button Styles for Divi */
+.et_pb_row .tab-button.bg-sky-600.text-white,
+.et_builder_inner_content .tab-button.bg-sky-600.text-white,
+div[data-module-type="code"] .tab-button.bg-sky-600.text-white,
+.tab-button.bg-sky-600.text-white {
+    background-color: #0284c7 !important; /* Tailwind's sky-600 hex value */
+    color: #ffffff !important;          /* White */
+}
+
+/* Optional: Forcing Inactive Tab Button Styles if needed */
+.et_pb_row .tab-button.bg-white.text-sky-700,
+.et_builder_inner_content .tab-button.bg-white.text-sky-700,
+div[data-module-type="code"] .tab-button.bg-white.text-sky-700,
+.tab-button.bg-white.text-sky-700 {
+    background-color: #ffffff !important; /* White */
+    color: #0369a1 !important;           /* Tailwind's sky-700 hex value */
+}
